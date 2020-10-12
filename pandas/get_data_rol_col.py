@@ -1,7 +1,10 @@
 import pandas as pd
 
-file_xlsx = '/home/khoa/Documents/WORK_notation-helper/1.work_.wh Python_helper/pandas/template.xlsx'
-file_data = pd.read_excel(file_xlsx, sheet_name='template')
+import os 
+pre = os.path.dirname(os.path.realpath(__file__))
+file_xlsx = 'template.xlsx'
+path = os.path.join(pre, file_xlsx)
+file_data = pd.read_excel(path, sheet_name='template')
 # print(file_data)
 # print('-'*20)
 # col_header = file_data.iloc[8:,0]

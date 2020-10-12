@@ -1,7 +1,7 @@
 
 
 import sys
-import string
+# import string
 
 
 def x_func():
@@ -27,8 +27,8 @@ string_class_name = getattr(sys.modules[__name__], 'a_class')
 
 # print(string_class_name.x)
 
-fn = getattr(string_class_name(), 'a_func_2')
-fn(12)
+# fn = getattr(string_class_name(), 'a_func_2')
+# fn(12)
 
 # string_class_name.a_func()
 
