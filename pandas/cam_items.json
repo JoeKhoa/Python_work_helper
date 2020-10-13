@@ -1,0 +1,124 @@
+data = [
+    {
+       "type_id":111,
+       "type_name":"Chụp hình tổng quan cửa hàng",
+       "store_status":[
+          "SUCCESS",
+          "UNSUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":112,
+       "type_name":"Chụp selfie",
+       "store_status":[
+          "SUCCESS",
+          "UNSUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":115,
+       "type_name":"Setup CH mới - TRƯỚC khi làm",
+       "store_status":[
+          "SUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":116,
+       "type_name":"Setup CH mới - SAU khi làm",
+       "store_status":[
+          "SUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":117,
+       "type_name":"Lắp đặt POSM - TRƯỚC khi làm",
+       "store_status":[
+          "SUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":118,
+       "type_name":"Lắp đặt POSM - SAU khi làm",
+       "store_status":[
+          "SUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":119,
+       "type_name":"Win vị trí - TRƯỚC khi làm",
+       "store_status":[
+          "SUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    },
+    {
+       "type_id":120,
+       "type_name":"Win vị trí - SAU khi làm",
+       "store_status":[
+          "SUCCESS"
+       ],
+       "validate":{
+          "required":"true",
+          "min":1,
+          "max":15
+       },
+       "value":[
+          
+       ]
+    }
+ ]
