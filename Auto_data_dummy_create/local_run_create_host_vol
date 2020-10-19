@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# create local volume folders
+mkdir -p vol_sync/resoucre/logs
+mkdir -p vol_sync/resoucre/staticfiles
+mkdir -p vol_sync/resoucre/mediafiles
+mkdir -p vol_sync/mysql/conf.d/
+mkdir -p vol_sync/mysql/mysql-data
+mkdir -p vol_sync/mysql/scripts
