@@ -1,0 +1,1488 @@
+{
+	"info": {
+		"_postman_id": "99faedce-6842-4469-a722-7f04e684f50c",
+		"name": "LOCAL_GENERAL(VARIABLIZE)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Mobile",
+			"item": [
+				{
+					"name": "mobile/auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "ko29hv9JQn1WukSWVXtdmSp4OU3wbGxA8FmFtJF9qHXVVrJ9NFyrHdLpdbdwvWWq"
+									},
+									{
+										"key": "X-APP-VERSION",
+										"value": "v1.0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"username\": \"{{username_field}}\", \"password\": \"{{password_field}}\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "6ZBtOqOkF3t9ALslJwtFR41QSYtA7fvTw3SbwpmBYSiYnpfxvXMt4sMQ1M3b9eL8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"current_password\": \"{{username_field}}\", \"new_password\": \"{{password_field}}\"}"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/auth/change-password/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"change-password",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot password (step 0)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "6ZBtOqOkF3t9ALslJwtFR41QSYtA7fvTw3SbwpmBYSiYnpfxvXMt4sMQ1M3b9eL8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"username\": \"{{username_field}}\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/auth/forgot-password/step-0/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"forgot-password",
+										"step-0",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot password (step 1)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "6ZBtOqOkF3t9ALslJwtFR41QSYtA7fvTw3SbwpmBYSiYnpfxvXMt4sMQ1M3b9eL8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"verify_code\": \"string\", \"forgot_password_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzM1NjQsImV4cCI6MTYwMzgwOTU2NCwidXNlcm5hbWUiOiJmaWVsZCIsInRva2VuX2FjdGlvbiI6IkZPUkdPVF9QQVNTV09SRCIsImFjdGlvbiI6eyJuZXh0X3N0ZXAiOiJzdGVwLTEifX0.O6ptFLIJAVrddvsYkXdqbZJSEhvtz95rbI4D7OTcD-0\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/auth/forgot-password/step-1/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"forgot-password",
+										"step-1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot password (step 2)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "6ZBtOqOkF3t9ALslJwtFR41QSYtA7fvTw3SbwpmBYSiYnpfxvXMt4sMQ1M3b9eL8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"forgot_password_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzQyNTMsImV4cCI6MTYwMzgxMDI1MywidXNlcm5hbWUiOiJmaWVsZCIsInRva2VuX2FjdGlvbiI6IkZPUkdPVF9QQVNTV09SRCIsImFjdGlvbiI6eyJuZXh0X3N0ZXAiOiJzdGVwLTIifX0.Z4kstZgSKZAUsjd7qmsrqpYWf-os88Nu-vpW-dSBB64\", \"new_password\": \"{{password_field}}\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/auth/forgot-password/step-2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"forgot-password",
+										"step-2",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "mobile/projects/json-structures",
+					"item": [
+						{
+							"name": "Get json structure detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "xn5J4sMBQTeXBMJDk0agLQfojLWhxN5QXrmrMrkS9I3MoqwP6rt4Ye0oszwSzMl5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/json-structures/78febd14-ff53-4c28-947e-9a98313291a0/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"json-structures",
+										"78febd14-ff53-4c28-947e-9a98313291a0",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get json structure list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "xn5J4sMBQTeXBMJDk0agLQfojLWhxN5QXrmrMrkS9I3MoqwP6rt4Ye0oszwSzMl5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/projects/34fc9f2a-b5dc-46d4-93cc-23f837cbf228/json-structures/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"projects",
+										"34fc9f2a-b5dc-46d4-93cc-23f837cbf228",
+										"json-structures",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "mobile/projects",
+					"item": [
+						{
+							"name": "Get project list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "xn5J4sMBQTeXBMJDk0agLQfojLWhxN5QXrmrMrkS9I3MoqwP6rt4Ye0oszwSzMl5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/projects/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"projects",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get project detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "xn5J4sMBQTeXBMJDk0agLQfojLWhxN5QXrmrMrkS9I3MoqwP6rt4Ye0oszwSzMl5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/projects/{{project_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"projects",
+										"{{project_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "mobile/projects/plans",
+					"item": [
+						{
+							"name": "checkin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "X-DEVICE-MODEL",
+										"value": "IPHONE-X"
+									},
+									{
+										"key": "X-APP-VERSION",
+										"value": "X-1"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "nrwe9Wa4H36YqIDjut7UeQbk8zAa7oXvnUA2TWeBzfYFMWnbTJKeO3CYJEqUJYYK"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"lat\": \"10.762622\", \"lng\": \"106.660777\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/{{plan_sid}}/checkin/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"{{plan_sid}}",
+										"checkin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "Mre8avlsnvBzu6sepRVyoIhUy1uQ11CDDX1D0Hfmw1JqLOyWi3TiWXCnR75gyPIT"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"lat\": \"10.76262200\", \"lng\": \"106.66077700\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/{{plan_actual_sid}}/checkout/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"{{plan_actual_sid}}",
+										"checkout",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload plan_actual image",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "fsBtWE2N72PzLX1zEtARUEHGHzTP8cCwUJoCtC3oWtda1gCeDbY4ibEZ2jEmb3on"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image_type",
+											"value": "{{image_type}}",
+											"description": "{{image_type_sid}}",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": [
+												"/home/khoa/Downloads/9E4A77F2-9C59-46B0-AF5C-039057AD493A.jpg",
+												"/home/khoa/Downloads/90D8F2FE-7980-4156-A045-4FB90B29F29F.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/images/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										"images",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mobile_actual-plans_data_create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "PrIxT2THsjUmbqcWTx2amsagXuHdkwUvuIvGq0UihKiXrJNBSfqnKZ7ziesKnnGm"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n\t\"id\": \"e0394ebc-3ded-4998-b671-57cc022318fc\",\n\t\"name\": \"DEV \",\n\t\"values\": [\n\t\t{\n\t\t\t\"key\": \"project_sid\",\n\t\t\t\"value\": \"90fdaa44-793f-43a0-8cc4-9343f4e6fb62\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"Bearer\",\n\t\t\t\"value\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDMwOTQ3NTgsImV4cCI6MTYwMzE4MTE1OC4wLCJzdWIiOiIxNTE2Y2RkZS1iOTRlLTQ4YWMtYjY2YS05NzkwYjMzNjM1MTEiLCJ1c2VyIjp7InNpZCI6IjE1MTZjZGRlLWI5NGUtNDhhYy1iNjZhLTk3OTBiMzM2MzUxMSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.jZf0if4377G2rCB-PDZzvYnDR7JMrVG9hCV2gIomddE\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"base_url\",\n\t\t\t\"value\": \"http://0.0.0.0:7011\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"Bearer_Field\",\n\t\t\t\"value\": \"Bearer \",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"username_admin\",\n\t\t\t\"value\": \"admin\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"password_admin\",\n\t\t\t\"value\": \"admin@123\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"username_field\",\n\t\t\t\"value\": \"field\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"password_field\",\n\t\t\t\"value\": \"field@123\",\n\t\t\t\"enabled\": true\n\t\t}\n\t],\n\t\"_postman_variable_scope\": \"environment\",\n\t\"_postman_exported_at\": \"2020-10-21T07:21:25.540Z\",\n\t\"_postman_exported_using\": \"Postman/7.34.0\"\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/data/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										"data",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan_actual uploaded images list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "P8PJsdHWknZXbYeQbZAPxLP3mEE8S4iHupCSZbIx9OnyrhPvaHY2ViMmHopFVV4y"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/images/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										"images",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mobile_actual-plans_data_list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzgyMTAsImV4cCI6MTYwMzg2NDYxMC4wLCJzdWIiOiI0MTc1ZjBiNS0wMzJlLTQzYWYtYjc2Ni0yZTM1ZTFkOTFhMGUiLCJ1c2VyIjp7InNpZCI6IjQxNzVmMGI1LTAzMmUtNDNhZi1iNzY2LTJlMzVlMWQ5MWEwZSIsInJvbGUiOiJGSUVMRCIsInBlcm1pc3Npb25zIjpbXX19.D1hAFoyRkziGl31mlIjjxxtroKPX3dAuig0IJjeSxKA"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/6d01ae66-8b0b-447f-b7ae-07d6d654924e/data/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"6d01ae66-8b0b-447f-b7ae-07d6d654924e",
+										"data",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/d068a7c8-7293-4935-acc2-79220d5e7be2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"d068a7c8-7293-4935-acc2-79220d5e7be2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzgyMTAsImV4cCI6MTYwMzg2NDYxMC4wLCJzdWIiOiI0MTc1ZjBiNS0wMzJlLTQzYWYtYjc2Ni0yZTM1ZTFkOTFhMGUiLCJ1c2VyIjp7InNpZCI6IjQxNzVmMGI1LTAzMmUtNDNhZi1iNzY2LTJlMzVlMWQ5MWEwZSIsInJvbGUiOiJGSUVMRCIsInBlcm1pc3Npb25zIjpbXX19.D1hAFoyRkziGl31mlIjjxxtroKPX3dAuig0IJjeSxKA"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/projects/34fc9f2a-b5dc-46d4-93cc-23f837cbf228/plans/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"projects",
+										"34fc9f2a-b5dc-46d4-93cc-23f837cbf228",
+										"plans",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "mobile/me/info",
+					"item": [
+						{
+							"name": "Get user info",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzMzMjEsImV4cCI6MTYwMzg1OTcyMS4wLCJzdWIiOiI0MTc1ZjBiNS0wMzJlLTQzYWYtYjc2Ni0yZTM1ZTFkOTFhMGUiLCJ1c2VyIjp7InNpZCI6IjQxNzVmMGI1LTAzMmUtNDNhZi1iNzY2LTJlMzVlMWQ5MWEwZSIsInJvbGUiOiJGSUVMRCIsInBlcm1pc3Npb25zIjpbXX19.l5Hs_qNE2foV8em9kLPF6MpHUx_ziMDIkY2qQDXvZdY"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "xn5J4sMBQTeXBMJDk0agLQfojLWhxN5QXrmrMrkS9I3MoqwP6rt4Ye0oszwSzMl5"
+									}
+								],
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/mobile/me/info/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"me",
+										"info",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "json_structure",
+					"item": [
+						{
+							"name": "create - json structure",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4414ab1e-e824-4e6e-9885-616ec6dc84d7",
+										"exec": [
+											"var value = environment.count;",
+											"// value =0",
+											"value++;",
+											"postman.setEnvironmentVariable(\"count\", value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "yqEsMvVm2vDtqjWgHB6fSbOJ8jQx2alwFyneQLIQGKaavUo54CbxZUOOjV4N2J7K"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project",
+											"value": "{{project_sid}}",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "code-1.{{count}}",
+											"type": "text"
+										},
+										{
+											"key": "version",
+											"value": "1.{{count}}",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{'test':'afa'}",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "c1.1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "version",
+											"value": "vc1.1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/json-structures/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"json-structures",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT_detail",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM2ODg5NTksImV4cCI6MTYwMzc3NTM1OS4wLCJzdWIiOiI4NmRjYzYxYS0zMDliLTQwOTctYjE0Yy01MzdmZDg3ZGU4MDUiLCJ1c2VyIjp7InNpZCI6Ijg2ZGNjNjFhLTMwOWItNDA5Ny1iMTRjLTUzN2ZkODdkZTgwNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.AgXMuez7xAkTe3p_2TnNAjBCUtbXLPxJQv-vfe5mNWs"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "NE3eARyodNTWBGOcRotvtjs4JCvMCMtUdIkWiQ6FwCILokBoDPMjGHd4Sq5nELJ9"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"project\": \"{{project_sid}}\", \"code\": \"code-test-1.4\", \"content\": \"{test-put}\", \"version\": \"ver-te-1.4\"}"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/json-structures/3/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"json-structures",
+										"3",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{base_url}}/api/v1/admin/json-structures/50/",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "NE3eARyodNTWBGOcRotvtjs4JCvMCMtUdIkWiQ6FwCILokBoDPMjGHd4Sq5nELJ9"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project",
+											"value": "{{project_sid}}",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "\"test-patch\"",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "\"{'ab':'fsf'}\"",
+											"type": "text"
+										},
+										{
+											"key": "version",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/json-structures/50/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"json-structures",
+										"50",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "{{base_url}}/api/v1/admin/json-structures/46/",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "NE3eARyodNTWBGOcRotvtjs4JCvMCMtUdIkWiQ6FwCILokBoDPMjGHd4Sq5nELJ9"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/json-structures/46/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"json-structures",
+										"46",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list json-structure",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "OLY8bUMSrM37YPDd77MGl8xfZkDP02jAVTHUfazm51AO3q52u8RYsRxkaWR50B5O"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/json-structures/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"json-structures",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "login_admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRFToken",
+								"value": "ko29hv9JQn1WukSWVXtdmSp4OU3wbGxA8FmFtJF9qHXVVrJ9NFyrHdLpdbdwvWWq"
+							},
+							{
+								"key": "X-APP-VERSION",
+								"type": "text",
+								"value": "v1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"username\": \"{{username_admin}}\", \"password\": \"{{password_admin}}\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/auth/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Template excell files",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							},
+							{
+								"key": "project_sid",
+								"value": "{{project_sid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admin/template-files/?template_type=IMPORT_PLAN",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"template-files",
+								""
+							],
+							"query": [
+								{
+									"key": "template_type",
+									"value": "IMPORT_USER",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_STORE",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_KPI",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_USER_OUT_PROJECT",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_PLANOGRAM",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_SKU_IN_PLANOGRAM",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_PLANOGRAM_IN_STORE_TYPE",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_PLANOGRAM_IN_REGION",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_SKU",
+									"disabled": true
+								},
+								{
+									"key": "template_type",
+									"value": "IMPORT_PLAN"
+								},
+								{
+									"key": "project_sid",
+									"value": "55a544b4-569b-43cf-8290-0457afe29316",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{Bearer}}"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "project_sid",
+									"value": "{{project_sid}}",
+									"type": "text"
+								},
+								{
+									"key": "project",
+									"value": "55a544b4-569b-43cf-8290-0457afe29316",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "project_sid",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "is_replace_data",
+									"value": "True",
+									"type": "text"
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_USER",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_STORE",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_SKU_IN_PLANOGRAM",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_SKU",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_PLANOGRAM",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_PLANOGRAM_IN_STORE_TYPE",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_PLANOGRAM_IN_REGION",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_STORE.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_USER_OUT_PROJECT.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_USER.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_SKU.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_PLAN.xlsx"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_SKU_IN_PLANOGRAM.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_PLAN",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_IMPORT_PLANOGRAM_IN_STORE_TYPE.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_IMPORT_PLANOGRAM_IN_REGION.xlsx",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/admin/import-files/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"import-files",
+								""
+							],
+							"query": [
+								{
+									"key": "project_sid",
+									"value": "685a6f2e-0bae-4b77-9f1f-009677056802",
+									"disabled": true
+								},
+								{
+									"key": "project_sid",
+									"value": "0d32165e-cc1e-4c3c-a363-7c6f3ae6e127",
+									"disabled": true
+								},
+								{
+									"key": "project_sid",
+									"value": "dssd ",
+									"disabled": true
+								},
+								{
+									"key": "project_sid",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get import file list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Downloads/OK_IMPORT_STORE.xlsx",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/home/khoa/Downloads/template_IMPORT_STORE_10_09_20__19_36_53.xlsx",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:7011/api/v1/admin/import-files/",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "7011",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"import-files",
+								""
+							],
+							"query": [
+								{
+									"key": "project_sid",
+									"value": "33366626-3ceb-405b-a3e0-53cec6d19123",
+									"disabled": true
+								},
+								{
+									"key": "project_sid",
+									"value": "fcffaa7b-1a99-4b2f-9473-5087c43d5490",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_STORE",
+									"disabled": true
+								},
+								{
+									"key": "import_type",
+									"value": "IMPORT_SKU_IN_PLANOGRAM",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "145ebbd2-c39d-4940-a2ad-320dca2d00bb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6fad0c4f-ba21-4c15-b1dc-e8baba1b51e5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
