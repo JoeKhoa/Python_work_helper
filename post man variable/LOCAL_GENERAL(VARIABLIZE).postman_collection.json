@@ -790,6 +790,84 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "mobile/plans",
+					"item": [
+						{
+							"name": "Get plan actual detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "93VuPKBXr5VA0aAPLvKXtdtyU6FP4qyQz7ccxJ9eKUKpNOn1xW3LGBey3Ufq6pO5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan actual list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "93VuPKBXr5VA0aAPLvKXtdtyU6FP4qyQz7ccxJ9eKUKpNOn1xW3LGBey3Ufq6pO5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/{{plan_sid}}/actual-plans/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"{{plan_sid}}",
+										"actual-plans",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -797,6 +875,374 @@
 		{
 			"name": "Admin",
 			"item": [
+				{
+					"name": "admin/plan-actual",
+					"item": [
+						{
+							"name": "checkin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "X-DEVICE-MODEL",
+										"value": "IPHONE-X"
+									},
+									{
+										"key": "X-APP-VERSION",
+										"value": "X-1"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "nrwe9Wa4H36YqIDjut7UeQbk8zAa7oXvnUA2TWeBzfYFMWnbTJKeO3CYJEqUJYYK"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"lat\": \"10.762622\", \"lng\": \"106.660777\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/{{plan_sid}}/checkin/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"{{plan_sid}}",
+										"checkin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "Mre8avlsnvBzu6sepRVyoIhUy1uQ11CDDX1D0Hfmw1JqLOyWi3TiWXCnR75gyPIT"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"lat\": \"10.76262200\", \"lng\": \"106.66077700\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/{{plan_actual_sid}}/checkout/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"{{plan_actual_sid}}",
+										"checkout",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload plan_actual image",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "fsBtWE2N72PzLX1zEtARUEHGHzTP8cCwUJoCtC3oWtda1gCeDbY4ibEZ2jEmb3on"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image_type",
+											"value": "{{image_type}}",
+											"description": "{{image_type_sid}}",
+											"type": "text"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": [
+												"/home/khoa/Downloads/9E4A77F2-9C59-46B0-AF5C-039057AD493A.jpg",
+												"/home/khoa/Downloads/90D8F2FE-7980-4156-A045-4FB90B29F29F.jpg"
+											]
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/images/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										"images",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mobile_actual-plans_data_create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "PrIxT2THsjUmbqcWTx2amsagXuHdkwUvuIvGq0UihKiXrJNBSfqnKZ7ziesKnnGm"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n\t\"id\": \"e0394ebc-3ded-4998-b671-57cc022318fc\",\n\t\"name\": \"DEV \",\n\t\"values\": [\n\t\t{\n\t\t\t\"key\": \"project_sid\",\n\t\t\t\"value\": \"90fdaa44-793f-43a0-8cc4-9343f4e6fb62\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"Bearer\",\n\t\t\t\"value\": \"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDMwOTQ3NTgsImV4cCI6MTYwMzE4MTE1OC4wLCJzdWIiOiIxNTE2Y2RkZS1iOTRlLTQ4YWMtYjY2YS05NzkwYjMzNjM1MTEiLCJ1c2VyIjp7InNpZCI6IjE1MTZjZGRlLWI5NGUtNDhhYy1iNjZhLTk3OTBiMzM2MzUxMSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.jZf0if4377G2rCB-PDZzvYnDR7JMrVG9hCV2gIomddE\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"base_url\",\n\t\t\t\"value\": \"http://0.0.0.0:7011\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"Bearer_Field\",\n\t\t\t\"value\": \"Bearer \",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"username_admin\",\n\t\t\t\"value\": \"admin\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"password_admin\",\n\t\t\t\"value\": \"admin@123\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"username_field\",\n\t\t\t\"value\": \"field\",\n\t\t\t\"enabled\": true\n\t\t},\n\t\t{\n\t\t\t\"key\": \"password_field\",\n\t\t\t\"value\": \"field@123\",\n\t\t\t\"enabled\": true\n\t\t}\n\t],\n\t\"_postman_variable_scope\": \"environment\",\n\t\"_postman_exported_at\": \"2020-10-21T07:21:25.540Z\",\n\t\"_postman_exported_using\": \"Postman/7.34.0\"\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/data/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										"data",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan_actual uploaded images list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "P8PJsdHWknZXbYeQbZAPxLP3mEE8S4iHupCSZbIx9OnyrhPvaHY2ViMmHopFVV4y"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/images/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										"images",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mobile_actual-plans_data_list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzgyMTAsImV4cCI6MTYwMzg2NDYxMC4wLCJzdWIiOiI0MTc1ZjBiNS0wMzJlLTQzYWYtYjc2Ni0yZTM1ZTFkOTFhMGUiLCJ1c2VyIjp7InNpZCI6IjQxNzVmMGI1LTAzMmUtNDNhZi1iNzY2LTJlMzVlMWQ5MWEwZSIsInJvbGUiOiJGSUVMRCIsInBlcm1pc3Npb25zIjpbXX19.D1hAFoyRkziGl31mlIjjxxtroKPX3dAuig0IJjeSxKA"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/6d01ae66-8b0b-447f-b7ae-07d6d654924e/data/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"6d01ae66-8b0b-447f-b7ae-07d6d654924e",
+										"data",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/plans/d068a7c8-7293-4935-acc2-79220d5e7be2/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"plans",
+										"d068a7c8-7293-4935-acc2-79220d5e7be2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzgyMTAsImV4cCI6MTYwMzg2NDYxMC4wLCJzdWIiOiI0MTc1ZjBiNS0wMzJlLTQzYWYtYjc2Ni0yZTM1ZTFkOTFhMGUiLCJ1c2VyIjp7InNpZCI6IjQxNzVmMGI1LTAzMmUtNDNhZi1iNzY2LTJlMzVlMWQ5MWEwZSIsInJvbGUiOiJGSUVMRCIsInBlcm1pc3Npb25zIjpbXX19.D1hAFoyRkziGl31mlIjjxxtroKPX3dAuig0IJjeSxKA"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/projects/34fc9f2a-b5dc-46d4-93cc-23f837cbf228/plans/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"projects",
+										"34fc9f2a-b5dc-46d4-93cc-23f837cbf228",
+										"plans",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
 				{
 					"name": "json_structure",
 					"item": [
@@ -1067,6 +1513,137 @@
 										"v1",
 										"admin",
 										"json-structures",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "plans/plans-actual",
+					"item": [
+						{
+							"name": "Get plan actual list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "urQb3Ce147DzG3fvC05riN1xsmsXckfXUv7TLBMinWsotH2HorofvbMxBa2yejvc"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/plans/{{plan_sid}}/actual-plans/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"plans",
+										"{{plan_sid}}",
+										"actual-plans",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get plan actual detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "JvkPRWgOvIguMlX1q2aJGCK0LYS3gG0j9zBxzVO5Ox5jzZKdcttxT0v0UMsEiFgy"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/plans/{{plan_sid}}/actual-plans/{{plan_actual_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"plans",
+										"{{plan_sid}}",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects/regions",
+					"item": [
+						{
+							"name": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/regions/",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "8x39zsuCK89nSOO0NsDvsO0BgNnlBKmgyBkRhr2T3XYcFsBczTWjFcLBpBXWDJCv"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"project\": \"34fc9f2a-b5dc-46d4-93cc-23f837cbf228\", \"code\": \"string-2\", \"name\": \"string\", \"created_by\": \"string\", \"updated_by\": \"string\", \"display_name\": \"string\", \"is_active\": true}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/regions/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"regions",
 										""
 									]
 								}
@@ -1416,15 +1993,10 @@
 							]
 						},
 						"url": {
-							"raw": "http://0.0.0.0:7011/api/v1/admin/import-files/",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/v1/admin/import-files/",
 							"host": [
-								"0",
-								"0",
-								"0",
-								"0"
+								"{{base_url}}"
 							],
-							"port": "7011",
 							"path": [
 								"api",
 								"v1",
@@ -1453,6 +2025,158 @@
 									"value": "IMPORT_SKU_IN_PLANOGRAM",
 									"disabled": true
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "plan-detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							},
+							{
+								"key": "X-CSRFToken",
+								"value": "urQb3Ce147DzG3fvC05riN1xsmsXckfXUv7TLBMinWsotH2HorofvbMxBa2yejvc"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admin/plans/{{plan_sid}}/plans/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"plans",
+								"{{plan_sid}}",
+								"plans",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail-store-type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							},
+							{
+								"key": "X-CSRFToken",
+								"value": "VOD7sg0M9pE1sHsRUhfUNnob5SHnpdZzlSUPafy3setQflf3GIyI0L9beGhYrcfO"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/store-types/{{store_type_sid}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"projects",
+								"{{project_sid}}",
+								"store-types",
+								"{{store_type_sid}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store-detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							},
+							{
+								"key": "X-CSRFToken",
+								"value": "L9b4aPooHac4o5HgcR783sDC0GSBIVCkbdsMSOWF0Z1TbJusYiqWgQoC9uscKUSz"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/stores/{{store_sid}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"projects",
+								"{{project_sid}}",
+								"stores",
+								"{{store_sid}}",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/json-structures",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-CSRFToken",
+								"value": "VOD7sg0M9pE1sHsRUhfUNnob5SHnpdZzlSUPafy3setQflf3GIyI0L9beGhYrcfO"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"project\": \"34fc9f2a-b5dc-46d4-93cc-23f837cbf228\",\n    \"code\": \"string.1.2\",\n    \"content\": {\n        \"issues\": {\n            \"CHECKIN\": {\n                \"issue_name\": \"Checkin\",\n                \"issue_key\": \"CHECKIN\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\",\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"value\": {\n                    \"lat\": null,\n                    \"lng\": null\n                }\n            },\n            \"CAMERA\": {\n                \"issue_name\": \"Camera\",\n                \"issue_key\": \"CAMERA\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\",\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"items\": [\n                    {\n                        \"image_type_sid\": \"26ede4df-3c52-4fb0-b59b-7c842e1b263a\",\n                        \"image_type_name\": \"ImageType Test 026\",\n                        \"store_status\": [\n                            \"SUCCESS\",\n                            \"UNSUCCESS\"\n                        ],\n                        \"validate\": {\n                            \"required\": true,\n                            \"min\": 1,\n                            \"max\": 1,\n                            \"gps_attached\": false,\n                            \"source\": [\n                                \"CAMERA\"\n                            ]\n                        },\n                        \"value\": []\n                    }\n                ]\n            },\n            \"QUESTIONNAIRES\": {\n                \"issue_name\": \"Questionnaires\",\n                \"issue_key\": \"QUESTIONNAIRES\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"items\": [\n                    {\n                        \"component_type\": \"SELECT\",\n                        \"keyboard_type\": \"default\",\n                        \"component_code\": \"EX386762.13226769195\",\n                        \"show\": true,\n                        \"label\": \"aaa\",\n                        \"validate\": {\n                            \"required\": true\n                        },\n                        \"default_value\": null,\n                        \"value\": null,\n                        \"options\": [\n                            {\n                                \"value\": \"key-aaa\",\n                                \"label\": \"aaa\"\n                            },\n                            {\n                                \"value\": \"key-khac\",\n                                \"label\": \"Khác\"\n                            }\n                        ],\n                        \"actions\": {}\n                    }\n                ]\n            },\n            \"NOTE_UNSUCCESS\": {\n                \"issue_name\": \"Note Unsuccess\",\n                \"issue_key\": \"NOTE_UNSUCCESS\",\n                \"done\": false,\n                \"store_status\": [\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"items\": [\n                    {\n                        \"component_type\": \"SELECT\",\n                        \"keyboard_type\": \"default\",\n                        \"component_code\": \"note_ktc\",\n                        \"label\": \"Lý do Không thành công\",\n                        \"validate\": {\n                            \"required\": true\n                        },\n                        \"default_value\": null,\n                        \"value\": null,\n                        \"options\": [\n                            {\n                                \"value\": \"key-diem-ban-khong-hop-tac\",\n                                \"label\": \"Điểm bán không hợp tác\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-thay-doi-loai-hinh-kinh-doanh\",\n                                \"label\": \"Điểm bán thay đổi loại hình kinh doanh\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-dong-cua\",\n                                \"label\": \"Điểm bán đóng cửa\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-khong-tim-thay\",\n                                \"label\": \"Điểm bán không tìm thấy\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-tam-dong-cua-do-dich-covid\",\n                                \"label\": \"Điểm bán tạm đóng cửa do dịch covid\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            \"CHECKOUT\": {\n                \"issue_name\": \"Check out\",\n                \"issue_key\": \"CHECKOUT\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\",\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"value\": {\n                    \"lat\": null,\n                    \"lng\": null\n                }\n            }\n        }\n    },\n    \"version\": \"v.1.1.1.2\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/admin/json-structures/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"json-structures",
+								""
 							]
 						}
 					},
