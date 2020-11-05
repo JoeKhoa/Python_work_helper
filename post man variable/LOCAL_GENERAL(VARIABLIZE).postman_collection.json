@@ -377,7 +377,7 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "mobile/projects/plans",
+					"name": "mobile/projects/plans(plan_actual)",
 					"item": [
 						{
 							"name": "checkin",
@@ -513,8 +513,8 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "image_type",
-											"value": "{{image_type}}",
+											"key": "image_type_sid",
+											"value": "{{image_type_sid}}",
 											"description": "{{image_type_sid}}",
 											"type": "text"
 										},
@@ -634,42 +634,6 @@
 							"response": []
 						},
 						{
-							"name": "mobile_actual-plans_data_list",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "accept",
-										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3NzgyMTAsImV4cCI6MTYwMzg2NDYxMC4wLCJzdWIiOiI0MTc1ZjBiNS0wMzJlLTQzYWYtYjc2Ni0yZTM1ZTFkOTFhMGUiLCJ1c2VyIjp7InNpZCI6IjQxNzVmMGI1LTAzMmUtNDNhZi1iNzY2LTJlMzVlMWQ5MWEwZSIsInJvbGUiOiJGSUVMRCIsInBlcm1pc3Npb25zIjpbXX19.D1hAFoyRkziGl31mlIjjxxtroKPX3dAuig0IJjeSxKA"
-									},
-									{
-										"key": "X-CSRFToken",
-										"value": "5416bmANGUCxNBTlrGTbQdYvbSzZqCpev8iOTl84ZJrmAfGxd7cZ3BJvkG9AsBFt"
-									}
-								],
-								"url": {
-									"raw": "{{base_url}}/api/v1/mobile/actual-plans/6d01ae66-8b0b-447f-b7ae-07d6d654924e/data/",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"api",
-										"v1",
-										"mobile",
-										"actual-plans",
-										"6d01ae66-8b0b-447f-b7ae-07d6d654924e",
-										"data",
-										""
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Get plan detail",
 							"request": {
 								"method": "GET",
@@ -739,6 +703,63 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer_Field}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "t8AAa6nw7sR0AfVKuCE21SR2bAYiHt74IBPXOB54GCB7UFJHdYwgggoQh7pls40P"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/mobile/actual-plans/{{plan_actual_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"actual-plans",
+										"{{plan_actual_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "158a50b1-b2b3-4809-87c7-66e6294829fe",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "db4d51b0-c647-4bcc-8254-6a13d6220c3c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -1238,6 +1259,42 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "plan-detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "urQb3Ce147DzG3fvC05riN1xsmsXckfXUv7TLBMinWsotH2HorofvbMxBa2yejvc"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/plans/{{plan_sid}}/plans/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"plans",
+										"{{plan_sid}}",
+										"plans",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -1254,10 +1311,10 @@
 									"script": {
 										"id": "4414ab1e-e824-4e6e-9885-616ec6dc84d7",
 										"exec": [
-											"var value = environment.count;",
+											"var value = environment.counter;",
 											"// value =0",
 											"value++;",
-											"postman.setEnvironmentVariable(\"count\", value);"
+											"postman.setEnvironmentVariable(\"counter\", value);"
 										],
 										"type": "text/javascript"
 									}
@@ -1284,44 +1341,11 @@
 									}
 								],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "project",
-											"value": "{{project_sid}}",
-											"type": "text"
-										},
-										{
-											"key": "code",
-											"value": "code-1.{{count}}",
-											"type": "text"
-										},
-										{
-											"key": "version",
-											"value": "1.{{count}}",
-											"type": "text"
-										},
-										{
-											"key": "content",
-											"value": "{'test':'afa'}",
-											"type": "text"
-										},
-										{
-											"key": "code",
-											"value": "c1.1",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "version",
-											"value": "vc1.1",
-											"type": "text",
-											"disabled": true
-										}
-									]
+									"mode": "raw",
+									"raw": "{\"project\":\"{{project_sid}}\",\"code\":\"code1-{{counter}}\",\"content\":{{json_structure}},\"version\":\"version1-{{counter}}\"}"
 								},
 								"url": {
-									"raw": "{{base_url}}/api/v1/admin/json-structures/",
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/json-structures/",
 									"host": [
 										"{{base_url}}"
 									],
@@ -1329,6 +1353,8 @@
 										"api",
 										"v1",
 										"admin",
+										"projects",
+										"{{project_sid}}",
 										"json-structures",
 										""
 									]
@@ -1337,7 +1363,7 @@
 							"response": []
 						},
 						{
-							"name": "PUT_detail",
+							"name": "json structure-update-all",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -1347,7 +1373,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM2ODg5NTksImV4cCI6MTYwMzc3NTM1OS4wLCJzdWIiOiI4NmRjYzYxYS0zMDliLTQwOTctYjE0Yy01MzdmZDg3ZGU4MDUiLCJ1c2VyIjp7InNpZCI6Ijg2ZGNjNjFhLTMwOWItNDA5Ny1iMTRjLTUzN2ZkODdkZTgwNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.AgXMuez7xAkTe3p_2TnNAjBCUtbXLPxJQv-vfe5mNWs"
+										"value": "{{Bearer}}"
 									},
 									{
 										"key": "Content-Type",
@@ -1363,21 +1389,18 @@
 									"raw": "{ \"project\": \"{{project_sid}}\", \"code\": \"code-test-1.4\", \"content\": \"{test-put}\", \"version\": \"ver-te-1.4\"}"
 								},
 								"url": {
-									"raw": "http://0.0.0.0:7011/api/v1/admin/json-structures/3/",
-									"protocol": "http",
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/json-structures/100/",
 									"host": [
-										"0",
-										"0",
-										"0",
-										"0"
+										"{{base_url}}"
 									],
-									"port": "7011",
 									"path": [
 										"api",
 										"v1",
 										"admin",
+										"projects",
+										"{{project_sid}}",
 										"json-structures",
-										"3",
+										"100",
 										""
 									]
 								}
@@ -1385,7 +1408,7 @@
 							"response": []
 						},
 						{
-							"name": "{{base_url}}/api/v1/admin/json-structures/50/",
+							"name": "json structure-update-partial",
 							"request": {
 								"method": "PATCH",
 								"header": [
@@ -1434,7 +1457,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}/api/v1/admin/json-structures/50/",
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/json-structures/50/",
 									"host": [
 										"{{base_url}}"
 									],
@@ -1442,6 +1465,8 @@
 										"api",
 										"v1",
 										"admin",
+										"projects",
+										"{{project_sid}}",
 										"json-structures",
 										"50",
 										""
@@ -1451,7 +1476,7 @@
 							"response": []
 						},
 						{
-							"name": "{{base_url}}/api/v1/admin/json-structures/46/",
+							"name": "json structure-delete",
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -1469,7 +1494,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/api/v1/admin/json-structures/46/",
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/json-structures/900/",
 									"host": [
 										"{{base_url}}"
 									],
@@ -1477,8 +1502,10 @@
 										"api",
 										"v1",
 										"admin",
+										"projects",
+										"{{project_sid}}",
 										"json-structures",
-										"46",
+										"900",
 										""
 									]
 								}
@@ -1486,7 +1513,7 @@
 							"response": []
 						},
 						{
-							"name": "list json-structure",
+							"name": "json-structure list ",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1504,7 +1531,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{base_url}}/api/v1/admin/json-structures/",
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/json-structures/",
 									"host": [
 										"{{base_url}}"
 									],
@@ -1512,6 +1539,8 @@
 										"api",
 										"v1",
 										"admin",
+										"projects",
+										"{{project_sid}}",
 										"json-structures",
 										""
 									]
@@ -1607,7 +1636,7 @@
 					"name": "admin/projects/regions",
 					"item": [
 						{
-							"name": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/regions/",
+							"name": "{regions-create",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1655,6 +1684,1561 @@
 					"_postman_isSubFolder": true
 				},
 				{
+					"name": "admin/qc_reason_category",
+					"item": [
+						{
+							"name": "reason-categories -list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQyODc0MjMsImV4cCI6MTYwNDM3MzgyMy4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.fILpyhafTP2DDhPyf2HViq02QG3_HofSHrMKOTKCyro"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "UqVBT656wDopZopsoWLZ2eDAlbSi120J9TaYxBNE5N8wjOdp7iDdhCaorIjlMDTu"
+									}
+								],
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/qc-reason-categories/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reason-categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reason-categories -create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQyODc0MjMsImV4cCI6MTYwNDM3MzgyMy4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.fILpyhafTP2DDhPyf2HViq02QG3_HofSHrMKOTKCyro"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "UqVBT656wDopZopsoWLZ2eDAlbSi120J9TaYxBNE5N8wjOdp7iDdhCaorIjlMDTu"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"code\": \"string-1.2\", \"created_by\": \"string\", \"updated_by\": \"string\", \"is_deleted\": true, \"label\": \"string\", \"is_active\": true}"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/qc-reason-categories/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reason-categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reason-categories-detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQyODc0MjMsImV4cCI6MTYwNDM3MzgyMy4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.fILpyhafTP2DDhPyf2HViq02QG3_HofSHrMKOTKCyro"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "UqVBT656wDopZopsoWLZ2eDAlbSi120J9TaYxBNE5N8wjOdp7iDdhCaorIjlMDTu"
+									}
+								],
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/qc-reason-categories/cfa6097e-df3d-4713-97ec-4874400f9b49/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reason-categories",
+										"cfa6097e-df3d-4713-97ec-4874400f9b49",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reason-categories-update-all",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQyODc0MjMsImV4cCI6MTYwNDM3MzgyMy4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.fILpyhafTP2DDhPyf2HViq02QG3_HofSHrMKOTKCyro"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "UqVBT656wDopZopsoWLZ2eDAlbSi120J9TaYxBNE5N8wjOdp7iDdhCaorIjlMDTu"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"code\": \"string-1.1\", \"created_by\": \"string\", \"updated_by\": \"string\", \"is_deleted\": true, \"label\": \"string\", \"is_active\": true}"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/qc-reason-categories/cfa6097e-df3d-4713-97ec-4874400f9b49/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reason-categories",
+										"cfa6097e-df3d-4713-97ec-4874400f9b49",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reason-categories-update partial",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQyODc0MjMsImV4cCI6MTYwNDM3MzgyMy4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.fILpyhafTP2DDhPyf2HViq02QG3_HofSHrMKOTKCyro"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "UqVBT656wDopZopsoWLZ2eDAlbSi120J9TaYxBNE5N8wjOdp7iDdhCaorIjlMDTu"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string\", \"updated_by\": \"string\", \"is_deleted\": true, \"code\": \"string 1.1.2\", \"label\": \"string\", \"is_active\": true}"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/qc-reason-categories/{{qc_category_sid}}/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reason-categories",
+										"{{qc_category_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reason-categories-del",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQyODc0MjMsImV4cCI6MTYwNDM3MzgyMy4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.fILpyhafTP2DDhPyf2HViq02QG3_HofSHrMKOTKCyro"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "UqVBT656wDopZopsoWLZ2eDAlbSi120J9TaYxBNE5N8wjOdp7iDdhCaorIjlMDTu"
+									}
+								],
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/qc-reason-categories/{{qc_category_sid}}/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reason-categories",
+										"{{qc_category_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects/plan_actual_qc",
+					"item": [
+						{
+							"name": "plan-qc-list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "Z39NT9HeExlvqszPZDDW4RpjL0iVhWLgewoaxEpMdH5CKSnMIZvajfW7RxJY2xE1"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/actual-plan/{{plan_actual_sid}}/qc/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"actual-plan",
+										"{{plan_actual_sid}}",
+										"qc",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "plan-qc-create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "Z39NT9HeExlvqszPZDDW4RpjL0iVhWLgewoaxEpMdH5CKSnMIZvajfW7RxJY2xE1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string\", \"updated_by\": \"string\", \"qc_status\": \"AWAIT\", \"qc_reason\": \"string\", \"qc_note\": \"string\",  \"plan_actual\": \"{{plan_actual_sid}}\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/actual-plan/{{plan_actual_sid}}/qc/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"actual-plan",
+										"{{plan_actual_sid}}",
+										"qc",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/qc_reasons",
+					"item": [
+						{
+							"name": "qc-reasons-list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "Z39NT9HeExlvqszPZDDW4RpjL0iVhWLgewoaxEpMdH5CKSnMIZvajfW7RxJY2xE1"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/qc-reasons/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reasons",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reasons-create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "Z39NT9HeExlvqszPZDDW4RpjL0iVhWLgewoaxEpMdH5CKSnMIZvajfW7RxJY2xE1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string\", \"updated_by\": \"string\", \"is_deleted\": true, \"code\": \"string-2\", \"label\": \"string\", \"is_active\": true, \"qc_reason_category\": \"1b4b4e93-288b-47ca-83a9-a19c65fb3abf\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/qc-reasons/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reasons",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reasons-detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Connection",
+										"value": "keep-alive"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"
+									},
+									{
+										"key": "Origin",
+										"value": "http://localhost:3000"
+									},
+									{
+										"key": "Referer",
+										"value": "http://localhost:3000/"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/qc-reasons/{{qc_reason_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reasons",
+										"{{qc_reason_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reasons-detail Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Connection",
+										"value": "keep-alive"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36"
+									},
+									{
+										"key": "Origin",
+										"value": "http://localhost:3000"
+									},
+									{
+										"key": "Referer",
+										"value": "http://localhost:3000/"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/qc-reasons/{{qc_reason_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reasons",
+										"{{qc_reason_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reasons-partial-update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string\", \"updated_by\": \"string\", \"is_deleted\": true, \"code\": \"string-test-put\", \"label\": \"string\", \"is_active\": true, \"qc_reason_category\": \"1b4b4e93-288b-47ca-83a9-a19c65fb3abf\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/qc-reasons/{{qc_reason_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reasons",
+										"{{qc_reason_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "qc-reasons-partial-update Copy",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string\", \"updated_by\": \"string\", \"is_deleted\": true, \"code\": \"string-test-put\", \"label\": \"string\", \"is_active\": true, \"qc_reason_category\": \"1b4b4e93-288b-47ca-83a9-a19c65fb3abf\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/qc-reasons/{{qc_reason_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"qc-reasons",
+										"{{qc_reason_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects",
+					"item": [
+						{
+							"name": "project-list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "project-create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"code\": \"string\", \"name\": \"string\", \"display_name\": \"string\", \"start_date\": \"2020-11-05\", \"end_date\": \"2020-11-05\", \"active_date\": \"2020-11-05\", \"created_by\": \"string\", \"updated_by\": \"string\", \"is_active\": true}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "project-detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/6efa8792-23d7-48e2-810d-2c6a5a4f47b6/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"6efa8792-23d7-48e2-810d-2c6a5a4f47b6",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/import-file",
+					"item": [
+						{
+							"name": "Import file",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project_sid",
+											"value": "{{project_sid2}}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "project_sid",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "is_replace_data",
+											"value": "True",
+											"type": "text"
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_USER",
+											"type": "text"
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_STORE",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_SKU_IN_PLANOGRAM",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_SKU",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_PLANOGRAM",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_PLANOGRAM_IN_STORE_TYPE",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_PLANOGRAM_IN_REGION",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/2. WORK_notation-helper/0.w_gen_General_project_note/template_to_import/LOCAL_STORE.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Downloads/template_IMPORT_USER_OUT_PROJECT_04_11_20__14_27_20.xlsx"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_USER.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_SKU.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_PLAN.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_SKU_IN_PLANOGRAM.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_PLAN",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_IMPORT_PLANOGRAM_IN_STORE_TYPE.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_IMPORT_PLANOGRAM_IN_REGION.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/import-files/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"import-files",
+										""
+									],
+									"query": [
+										{
+											"key": "project_sid",
+											"value": "685a6f2e-0bae-4b77-9f1f-009677056802",
+											"disabled": true
+										},
+										{
+											"key": "project_sid",
+											"value": "0d32165e-cc1e-4c3c-a363-7c6f3ae6e127",
+											"disabled": true
+										},
+										{
+											"key": "project_sid",
+											"value": "dssd ",
+											"disabled": true
+										},
+										{
+											"key": "project_sid",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get import file list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Downloads/OK_IMPORT_STORE.xlsx",
+											"disabled": true
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/home/khoa/Downloads/template_IMPORT_STORE_10_09_20__19_36_53.xlsx",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/import-files/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"import-files",
+										""
+									],
+									"query": [
+										{
+											"key": "project_sid",
+											"value": "33366626-3ceb-405b-a3e0-53cec6d19123",
+											"disabled": true
+										},
+										{
+											"key": "project_sid",
+											"value": "fcffaa7b-1a99-4b2f-9473-5087c43d5490",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_STORE",
+											"disabled": true
+										},
+										{
+											"key": "import_type",
+											"value": "IMPORT_SKU_IN_PLANOGRAM",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "templates",
+					"item": [
+						{
+							"name": "Template excell files",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}",
+										"type": "text"
+									},
+									{
+										"key": "project_sid",
+										"value": "{{project_sid}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/template-files/?template_type=IMPORT_USER_OUT_PROJECT",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"template-files",
+										""
+									],
+									"query": [
+										{
+											"key": "template_type",
+											"value": "IMPORT_USER",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_STORE",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_KPI",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_USER_OUT_PROJECT"
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_PLANOGRAM",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_SKU_IN_PLANOGRAM",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_PLANOGRAM_IN_STORE_TYPE",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_PLANOGRAM_IN_REGION",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_SKU",
+											"disabled": true
+										},
+										{
+											"key": "template_type",
+											"value": "IMPORT_PLAN",
+											"disabled": true
+										},
+										{
+											"key": "project_sid",
+											"value": "55a544b4-569b-43cf-8290-0457afe29316",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects/store-types",
+					"item": [
+						{
+							"name": "store-types",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "cvDoVE89cIwPsNNbmpdq4fok2VNefNj7rYSLz9QHLSgWMdB85L5EjDV88seh0ocS"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/store-types/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"store-types",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "post store-type",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "627ad1ca-04f6-46e3-bf1a-04606d31588f",
+										"exec": [
+											"var value = environment.counter;",
+											"// value =0",
+											"value++;",
+											"postman.setEnvironmentVariable(\"counter\", value);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "cvDoVE89cIwPsNNbmpdq4fok2VNefNj7rYSLz9QHLSgWMdB85L5EjDV88seh0ocS"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"code\": \"store-type-124\", \"name\": \"string\", \"created_by\": \"string\", \"updated_by\": \"string\", \"is_active\": true, \"project\": \"0560ab0b-2a57-4795-8cc0-5714b6541058\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid2}}/store-types/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid2}}",
+										"store-types",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects/store",
+					"item": [
+						{
+							"name": "store-detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "L9b4aPooHac4o5HgcR783sDC0GSBIVCkbdsMSOWF0Z1TbJusYiqWgQoC9uscKUSz"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/stores/{{store_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"stores",
+										"{{store_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "stores-list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/stores/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"stores",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "stores-create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "gp8dsvmVTxRK6Q5EoMsJkHgdc4iMfBVRvSnA604tsHBRqgTB78kXz5N1iBJP0cOC"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"deleted_by\": \"string\", \"deleted_at\": \"2020-11-05T05:01:41.636Z\", \"is_deleted\": true, \"code\": \"string-1\", \"name\": \"string\", \"is_active\": true, \"lat\": \"21.32888900\", \"lng\": \"105.38802800\", \"specified_radius\": 0, \"location\": \"string\", \"address_number\": \"string\", \"address_street\": \"string\", \"ward_code\": \"string\", \"district_code\": \"string\", \"province_code\": \"string\", \"region_code\": \"string\", \"area_code\": \"string\", \"zone_code\": \"string\", \"city_code\": \"string\", \"ward_import_text\": \"string\", \"district_import_text\": \"string\", \"province_import_text\": \"string\", \"create_date\": \"2020-11-05\", \"distributor_code\": \"string\", \"distributor_name\": \"string\", \"client_code\": \"string\", \"shop_owner_name\": \"string\", \"shop_owner_phone\": \"string\", \"dashboard\": \"string\", \"channel\": \"string\", \"subsegment_1\": \"string\", \"subsegment_2\": \"string\", \"sub_area\": \"string\", \"urban_rural\": \"string\", \"png_application\": \"string\", \"bm\": \"string\", \"rsm\": \"string\", \"asm\": \"string\", \"sup_name\": \"string\", \"sale_name\": \"string\", \"sale_phone\": \"string\", \"sale_route\": \"string\", \"sale_email\": \"string\", \"smollan_lead\": \"string\", \"smollan_sup\": \"string\", \"field_marketer\": \"string\", \"field_marketer_phone\": \"string\", \"field_marketer_user\": \"string\", \"remark\": \"string\", \"field_1\": \"string\", \"field_2\": \"string\", \"field_3\": \"string\", \"field_4\": \"string\", \"project\": \"{{project_sid}}\", \"store_type\": \"{{store_type_sid}}\"}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/stores/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"stores",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects/store-type",
+					"item": [
+						{
+							"name": "detail-store-type",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Bearer}}"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "VOD7sg0M9pE1sHsRUhfUNnob5SHnpdZzlSUPafy3setQflf3GIyI0L9beGhYrcfO"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/store-types/{{store_type_sid}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"{{project_sid}}",
+										"store-types",
+										"{{store_type_sid}}",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "admin/projects/plans",
+					"item": [
+						{
+							"name": "plan-list",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQ1NDg1MzgsImV4cCI6MTYwNDYzNDkzOC4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.Swokj3dLgApoEuHMTqSHg8TmOWUzs5SaLmJaqTxopA8"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "DdZIIaYDPL0MOZqTCkjP6IK7ReZzOxPSSGe5mFGboVKT8peQlGb3l6hVXLqCz8ID"
+									}
+								],
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/projects/fced0594-dc2f-40df-94ec-7c4b0a77f635/plans/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"fced0594-dc2f-40df-94ec-7c4b0a77f635",
+										"plans",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "plan-create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQ1NDg1MzgsImV4cCI6MTYwNDYzNDkzOC4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.Swokj3dLgApoEuHMTqSHg8TmOWUzs5SaLmJaqTxopA8"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "YXxnMujwzetDLvPiIlPZeSXmmzE6g4gLdqMKqZ148odK5VDfrHHdtguas6591F9w"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string\", \"updated_by\": \"string\", \"code\": \"string\", \"name\": \"string\", \"planograms_code\": \"plano-1; plano-2\", \"status\": \"TODO\", \"start_date\": \"2020-11-05\", \"end_date\": \"2020-11-05\", \"is_manual\": 0, \"project\": \"0560ab0b-2a57-4795-8cc0-5714b6541058\", \"store\": \"7719d0e8-5314-40ff-8b8d-f07d7e2ed62c\", \"field\": \"78a4b2aa-8892-4a0b-94d5-50d8dc2333a6\"}"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/projects/0560ab0b-2a57-4795-8cc0-5714b6541058/plans/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"0560ab0b-2a57-4795-8cc0-5714b6541058",
+										"plans",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "plan-detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQ1NDg1MzgsImV4cCI6MTYwNDYzNDkzOC4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.Swokj3dLgApoEuHMTqSHg8TmOWUzs5SaLmJaqTxopA8"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "YXxnMujwzetDLvPiIlPZeSXmmzE6g4gLdqMKqZ148odK5VDfrHHdtguas6591F9w"
+									}
+								],
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/projects/0560ab0b-2a57-4795-8cc0-5714b6541058/plans/3e39db74-725b-4c3e-8567-b464c50eda12/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"0560ab0b-2a57-4795-8cc0-5714b6541058",
+										"plans",
+										"3e39db74-725b-4c3e-8567-b464c50eda12",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://0.0.0.0:7011/api/v1/admin/projects/0560ab0b-2a57-4795-8cc0-5714b6541058/plans/b68bcea4-6ee2-4ada-a356-53a9822644ff/",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDQ1NDg1MzgsImV4cCI6MTYwNDYzNDkzOC4wLCJzdWIiOiI3MzYzMmI1Zi0xMzBkLTRjNjctYmQyYy0yNTU0YWFjYTcyMjUiLCJ1c2VyIjp7InNpZCI6IjczNjMyYjVmLTEzMGQtNGM2Ny1iZDJjLTI1NTRhYWNhNzIyNSIsInJvbGUiOiJBRE1JTiIsInBlcm1pc3Npb25zIjpbXX19.Swokj3dLgApoEuHMTqSHg8TmOWUzs5SaLmJaqTxopA8"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-CSRFToken",
+										"value": "YXxnMujwzetDLvPiIlPZeSXmmzE6g4gLdqMKqZ148odK5VDfrHHdtguas6591F9w"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"created_by\": \"string-2122332\", \"updated_by\": \"string\", \"code\": \"string\", \"name\": \"string\", \"planograms_code\": \"string, stirng 2\", \"status\": \"TODO\", \"start_date\": \"2020-11-05\", \"end_date\": \"2020-11-05\", \"is_manual\": 0, \"store\": \"\" }"
+								},
+								"url": {
+									"raw": "http://0.0.0.0:7011/api/v1/admin/projects/0560ab0b-2a57-4795-8cc0-5714b6541058/plans/b68bcea4-6ee2-4ada-a356-53a9822644ff/",
+									"protocol": "http",
+									"host": [
+										"0",
+										"0",
+										"0",
+										"0"
+									],
+									"port": "7011",
+									"path": [
+										"api",
+										"v1",
+										"admin",
+										"projects",
+										"0560ab0b-2a57-4795-8cc0-5714b6541058",
+										"plans",
+										"b68bcea4-6ee2-4ada-a356-53a9822644ff",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "login_admin",
 					"request": {
 						"method": "POST",
@@ -1691,491 +3275,6 @@
 								"v1",
 								"auth",
 								"login",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Template excell files",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							},
-							{
-								"key": "project_sid",
-								"value": "{{project_sid}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/template-files/?template_type=IMPORT_PLAN",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"template-files",
-								""
-							],
-							"query": [
-								{
-									"key": "template_type",
-									"value": "IMPORT_USER",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_STORE",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_KPI",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_USER_OUT_PROJECT",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_PLANOGRAM",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_SKU_IN_PLANOGRAM",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_PLANOGRAM_IN_STORE_TYPE",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_PLANOGRAM_IN_REGION",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_SKU",
-									"disabled": true
-								},
-								{
-									"key": "template_type",
-									"value": "IMPORT_PLAN"
-								},
-								{
-									"key": "project_sid",
-									"value": "55a544b4-569b-43cf-8290-0457afe29316",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Import file",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "{{Bearer}}"
-							},
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "project_sid",
-									"value": "{{project_sid}}",
-									"type": "text"
-								},
-								{
-									"key": "project",
-									"value": "55a544b4-569b-43cf-8290-0457afe29316",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "project_sid",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "is_replace_data",
-									"value": "True",
-									"type": "text"
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_USER",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_STORE",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_SKU_IN_PLANOGRAM",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_SKU",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_PLANOGRAM",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_PLANOGRAM_IN_STORE_TYPE",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_PLANOGRAM_IN_REGION",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_STORE.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_USER_OUT_PROJECT.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_USER.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_SKU.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_PLAN.xlsx"
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_SKU_IN_PLANOGRAM.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_PLAN",
-									"type": "text"
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_IMPORT_PLANOGRAM_IN_STORE_TYPE.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Documents/WORK_notation-helper/w0.w_gen_General_project_note/LOCAL_IMPORT_PLANOGRAM_IN_REGION.xlsx",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/import-files/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"import-files",
-								""
-							],
-							"query": [
-								{
-									"key": "project_sid",
-									"value": "685a6f2e-0bae-4b77-9f1f-009677056802",
-									"disabled": true
-								},
-								{
-									"key": "project_sid",
-									"value": "0d32165e-cc1e-4c3c-a363-7c6f3ae6e127",
-									"disabled": true
-								},
-								{
-									"key": "project_sid",
-									"value": "dssd ",
-									"disabled": true
-								},
-								{
-									"key": "project_sid",
-									"value": "",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get import file list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Downloads/OK_IMPORT_STORE.xlsx",
-									"disabled": true
-								},
-								{
-									"key": "files",
-									"type": "file",
-									"src": "/home/khoa/Downloads/template_IMPORT_STORE_10_09_20__19_36_53.xlsx",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/import-files/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"import-files",
-								""
-							],
-							"query": [
-								{
-									"key": "project_sid",
-									"value": "33366626-3ceb-405b-a3e0-53cec6d19123",
-									"disabled": true
-								},
-								{
-									"key": "project_sid",
-									"value": "fcffaa7b-1a99-4b2f-9473-5087c43d5490",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_STORE",
-									"disabled": true
-								},
-								{
-									"key": "import_type",
-									"value": "IMPORT_SKU_IN_PLANOGRAM",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "plan-detail",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}"
-							},
-							{
-								"key": "X-CSRFToken",
-								"value": "urQb3Ce147DzG3fvC05riN1xsmsXckfXUv7TLBMinWsotH2HorofvbMxBa2yejvc"
-							}
-						],
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/plans/{{plan_sid}}/plans/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"plans",
-								"{{plan_sid}}",
-								"plans",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "detail-store-type",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}"
-							},
-							{
-								"key": "X-CSRFToken",
-								"value": "VOD7sg0M9pE1sHsRUhfUNnob5SHnpdZzlSUPafy3setQflf3GIyI0L9beGhYrcfO"
-							}
-						],
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/store-types/{{store_type_sid}}/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"projects",
-								"{{project_sid}}",
-								"store-types",
-								"{{store_type_sid}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "store-detail",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}"
-							},
-							{
-								"key": "X-CSRFToken",
-								"value": "L9b4aPooHac4o5HgcR783sDC0GSBIVCkbdsMSOWF0Z1TbJusYiqWgQoC9uscKUSz"
-							}
-						],
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/projects/{{project_sid}}/stores/{{store_sid}}/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"projects",
-								"{{project_sid}}",
-								"stores",
-								"{{store_sid}}",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "admin/json-structures",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Authorization",
-								"value": "{{Bearer}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "X-CSRFToken",
-								"value": "VOD7sg0M9pE1sHsRUhfUNnob5SHnpdZzlSUPafy3setQflf3GIyI0L9beGhYrcfO"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"project\": \"34fc9f2a-b5dc-46d4-93cc-23f837cbf228\",\n    \"code\": \"string.1.2\",\n    \"content\": {\n        \"issues\": {\n            \"CHECKIN\": {\n                \"issue_name\": \"Checkin\",\n                \"issue_key\": \"CHECKIN\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\",\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"value\": {\n                    \"lat\": null,\n                    \"lng\": null\n                }\n            },\n            \"CAMERA\": {\n                \"issue_name\": \"Camera\",\n                \"issue_key\": \"CAMERA\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\",\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"items\": [\n                    {\n                        \"image_type_sid\": \"26ede4df-3c52-4fb0-b59b-7c842e1b263a\",\n                        \"image_type_name\": \"ImageType Test 026\",\n                        \"store_status\": [\n                            \"SUCCESS\",\n                            \"UNSUCCESS\"\n                        ],\n                        \"validate\": {\n                            \"required\": true,\n                            \"min\": 1,\n                            \"max\": 1,\n                            \"gps_attached\": false,\n                            \"source\": [\n                                \"CAMERA\"\n                            ]\n                        },\n                        \"value\": []\n                    }\n                ]\n            },\n            \"QUESTIONNAIRES\": {\n                \"issue_name\": \"Questionnaires\",\n                \"issue_key\": \"QUESTIONNAIRES\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"items\": [\n                    {\n                        \"component_type\": \"SELECT\",\n                        \"keyboard_type\": \"default\",\n                        \"component_code\": \"EX386762.13226769195\",\n                        \"show\": true,\n                        \"label\": \"aaa\",\n                        \"validate\": {\n                            \"required\": true\n                        },\n                        \"default_value\": null,\n                        \"value\": null,\n                        \"options\": [\n                            {\n                                \"value\": \"key-aaa\",\n                                \"label\": \"aaa\"\n                            },\n                            {\n                                \"value\": \"key-khac\",\n                                \"label\": \"Khác\"\n                            }\n                        ],\n                        \"actions\": {}\n                    }\n                ]\n            },\n            \"NOTE_UNSUCCESS\": {\n                \"issue_name\": \"Note Unsuccess\",\n                \"issue_key\": \"NOTE_UNSUCCESS\",\n                \"done\": false,\n                \"store_status\": [\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"items\": [\n                    {\n                        \"component_type\": \"SELECT\",\n                        \"keyboard_type\": \"default\",\n                        \"component_code\": \"note_ktc\",\n                        \"label\": \"Lý do Không thành công\",\n                        \"validate\": {\n                            \"required\": true\n                        },\n                        \"default_value\": null,\n                        \"value\": null,\n                        \"options\": [\n                            {\n                                \"value\": \"key-diem-ban-khong-hop-tac\",\n                                \"label\": \"Điểm bán không hợp tác\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-thay-doi-loai-hinh-kinh-doanh\",\n                                \"label\": \"Điểm bán thay đổi loại hình kinh doanh\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-dong-cua\",\n                                \"label\": \"Điểm bán đóng cửa\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-khong-tim-thay\",\n                                \"label\": \"Điểm bán không tìm thấy\"\n                            },\n                            {\n                                \"value\": \"key-diem-ban-tam-dong-cua-do-dich-covid\",\n                                \"label\": \"Điểm bán tạm đóng cửa do dịch covid\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            \"CHECKOUT\": {\n                \"issue_name\": \"Check out\",\n                \"issue_key\": \"CHECKOUT\",\n                \"done\": false,\n                \"store_status\": [\n                    \"SUCCESS\",\n                    \"UNSUCCESS\"\n                ],\n                \"validate\": {\n                    \"required\": true\n                },\n                \"value\": {\n                    \"lat\": null,\n                    \"lng\": null\n                }\n            }\n        }\n    },\n    \"version\": \"v.1.1.1.2\"\n}"
-						},
-						"url": {
-							"raw": "{{base_url}}/api/v1/admin/json-structures/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"api",
-								"v1",
-								"admin",
-								"json-structures",
 								""
 							]
 						}
