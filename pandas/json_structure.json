@@ -1,5 +1,4 @@
-
-data = {
+{
   "issues": {
     "CHECKIN": {
       "issue_name": "Checkin",

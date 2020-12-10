@@ -1,3 +1,0 @@
-django-silk
-
-django-bebug-toolbar

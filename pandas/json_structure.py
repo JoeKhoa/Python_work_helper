@@ -4,29 +4,29 @@ data = {
     "CHECKIN": {
       "issue_name": "Checkin",
       "issue_key": "CHECKIN",
-      "done": 'false',
+      "done": false,
       "store_status": [
         "SUCCESS",
         "UNSUCCESS"
       ],
       "validate": {
-        "required": 'true'
+        "required": true
       },
       "value": {
-        "lat": 'null',
-        "lng": 'null'
+        "lat": null,
+        "lng": null
       }
     },
     "CAMERA": {
       "issue_name": "Camera",
       "issue_key": "CAMERA",
-      "done": 'false',
+      "done": false,
       "store_status": [
         "SUCCESS",
         "UNSUCCESS"
       ],
       "validate": {
-        "required": 'true'
+        "required": true
       },
       "items": [
         {
@@ -37,7 +37,7 @@ data = {
             "UNSUCCESS"
           ],
           "validate": {
-            "required": 'true',
+            "required": true,
             "min": 1,
             "max": 15
           },
@@ -51,7 +51,7 @@ data = {
             "UNSUCCESS"
           ],
           "validate": {
-            "required": 'true',
+            "required": true,
             "min": 1,
             "max": 15
           },
@@ -64,7 +64,7 @@ data = {
               "SUCCESS"
             ],
             "validate": {
-              "required": 'true',
+              "required": true,
               "min": 1,
               "max": 15
             },
@@ -77,7 +77,7 @@ data = {
               "SUCCESS"
             ],
             "validate": {
-              "required": 'true',
+              "required": true,
               "min": 1,
               "max": 15
             },
@@ -90,7 +90,7 @@ data = {
               "SUCCESS"
             ],
             "validate": {
-              "required": 'true',
+              "required": true,
               "min": 1,
               "max": 15
             },
@@ -103,7 +103,7 @@ data = {
               "SUCCESS"
             ],
             "validate": {
-              "required": 'true',
+              "required": true,
               "min": 1,
               "max": 15
             },
@@ -116,7 +116,7 @@ data = {
               "SUCCESS"
             ],
             "validate": {
-              "required": 'true',
+              "required": true,
               "min": 1,
               "max": 15
             },
@@ -129,7 +129,7 @@ data = {
               "SUCCESS"
             ],
             "validate": {
-              "required": 'true',
+              "required": true,
               "min": 1,
               "max": 15
             },
@@ -140,12 +140,12 @@ data = {
     "FACING": {
       "issue_name": "Facing",
       "issue_key": "FACING",
-      "done": 'false',
+      "done": false,
       "store_status": [
         "SUCCESS"
       ],
       "validate": {
-        "required": 'true'
+        "required": true
       },
       "items": [
         {
@@ -156,7 +156,7 @@ data = {
           "store_types": [
             "FGSUPERL"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -176,43 +176,43 @@ data = {
                   "sku_code": "CMDSTORE0003",
                   "sku_name": "Setup HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0007",
                   "sku_name": "Setup PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0006",
                   "sku_name": "Setup Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0005",
                   "sku_name": "Setup Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0002",
                   "sku_name": "Setup GE",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0009",
                   "sku_name": "Setup Ụ đảo",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -226,7 +226,7 @@ data = {
           "store_types": [
             "FGSXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -246,37 +246,37 @@ data = {
                   "sku_code": "CMDSTORE0003",
                   "sku_name": "Setup HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0007",
                   "sku_name": "Setup PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0006",
                   "sku_name": "Setup Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0005",
                   "sku_name": "Setup Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0002",
                   "sku_name": "Setup GE",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -290,7 +290,7 @@ data = {
           "store_types": [
             "HBL"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -310,13 +310,13 @@ data = {
                   "sku_code": "CMDSTORE0004",
                   "sku_name": "Setup Kệ chính",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -330,7 +330,7 @@ data = {
           "store_types": [
             "HBM"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -350,13 +350,13 @@ data = {
                   "sku_code": "CMDSTORE0004",
                   "sku_name": "Setup Kệ chính",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -370,7 +370,7 @@ data = {
           "store_types": [
             "HBSXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -390,13 +390,13 @@ data = {
                   "sku_code": "CMDSTORE0004",
                   "sku_name": "Setup Kệ chính",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -410,7 +410,7 @@ data = {
           "store_types": [
             "MP"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -430,13 +430,13 @@ data = {
                   "sku_code": "CMDSTORE0004",
                   "sku_name": "Setup Kệ chính",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -450,7 +450,7 @@ data = {
           "store_types": [
             "MXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -470,13 +470,13 @@ data = {
                   "sku_code": "CMDSTORE0004",
                   "sku_name": "Setup Kệ chính",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDSTORE0008",
                   "sku_name": "Setup Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -490,7 +490,7 @@ data = {
           "store_types": [
             "MS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -510,7 +510,7 @@ data = {
                   "sku_code": "CMDSTORE0001",
                   "sku_name": "Setup Full store",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -524,7 +524,7 @@ data = {
           "store_types": [
             "FGSUPERL"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -544,79 +544,79 @@ data = {
                   "sku_code": "CMDPOSM0022",
                   "sku_name": "Window Frame-POSM PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0019",
                   "sku_name": "Window Frame-POSM HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0021",
                   "sku_name": "Window Frame-POSM Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0020",
                   "sku_name": "Window Frame-POSM Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0009",
                   "sku_name": "PET-POSM Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0008",
                   "sku_name": "PET-POSM Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0007",
                   "sku_name": "PET-POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0006",
                   "sku_name": "PET-POSM Khung HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0001",
                   "sku_name": "GE/FSU-POSM GE/FSU",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -630,7 +630,7 @@ data = {
           "store_types": [
             "FGSXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -650,79 +650,79 @@ data = {
                   "sku_code": "CMDPOSM0022",
                   "sku_name": "Window Frame-POSM PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0019",
                   "sku_name": "Window Frame-POSM HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0021",
                   "sku_name": "Window Frame-POSM Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0020",
                   "sku_name": "Window Frame-POSM Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0009",
                   "sku_name": "PET-POSM Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0008",
                   "sku_name": "PET-POSM Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0007",
                   "sku_name": "PET-POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0006",
                   "sku_name": "PET-POSM Khung HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0001",
                   "sku_name": "GE/FSU-POSM GE/FSU",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -736,7 +736,7 @@ data = {
           "store_types": [
             "HBL"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -756,73 +756,73 @@ data = {
                   "sku_code": "CMDPOSM0018",
                   "sku_name": "Window Frame -POSM Khung Skin",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0017",
                   "sku_name": "Window Frame -POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0016",
                   "sku_name": "Window Frame -POSM Khung Oral",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0015",
                   "sku_name": "Window Frame -POSM Khung Men",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0005",
                   "sku_name": "PET -POSM Khung Skin",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0004",
                   "sku_name": "PET -POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0003",
                   "sku_name": "PET -POSM Khung Oral",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0002",
                   "sku_name": "PET -POSM Khung Men",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -836,7 +836,7 @@ data = {
           "store_types": [
             "HBM"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -856,61 +856,61 @@ data = {
                   "sku_code": "CMDPOSM0018",
                   "sku_name": "Window Frame -POSM Khung Skin",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0017",
                   "sku_name": "Window Frame -POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0016",
                   "sku_name": "Window Frame -POSM Khung Oral",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0005",
                   "sku_name": "PET -POSM Khung Skin",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0004",
                   "sku_name": "PET -POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0003",
                   "sku_name": "PET -POSM Khung Oral",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -924,7 +924,7 @@ data = {
           "store_types": [
             "HBSXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -944,37 +944,37 @@ data = {
                   "sku_code": "CMDPOSM0017",
                   "sku_name": "Window Frame -POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0004",
                   "sku_name": "PET -POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -988,7 +988,7 @@ data = {
           "store_types": [
             "MP"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1008,55 +1008,55 @@ data = {
                   "sku_code": "CMDPOSM0022",
                   "sku_name": "Window Frame-POSM PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0019",
                   "sku_name": "Window Frame-POSM HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0007",
                   "sku_name": "PET-POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0006",
                   "sku_name": "PET-POSM Khung HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0010",
                   "sku_name": "POSM GE/FSU",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1070,7 +1070,7 @@ data = {
           "store_types": [
             "MXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1090,43 +1090,43 @@ data = {
                   "sku_code": "CMDPOSM0010",
                   "sku_name": "POSM GE/FSU",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0022",
                   "sku_name": "Window Frame-POSM PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0007",
                   "sku_name": "PET-POSM Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1140,7 +1140,7 @@ data = {
           "store_types": [
             "MS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1160,37 +1160,37 @@ data = {
                   "sku_code": "CMDPOSM0020",
                   "sku_name": "Window Frame-POSM Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0008",
                   "sku_name": "PET-POSM Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1204,7 +1204,7 @@ data = {
           "store_types": [
             "MASSIVEOCD"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1224,25 +1224,25 @@ data = {
                   "sku_code": "CMDPOSM0012",
                   "sku_name": "POSM Kệ200MBànchải",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0011",
                   "sku_name": "POSM Kệ15MComfort",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0014",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Trụ tròn",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDPOSM0013",
                   "sku_name": "Sachet (dầu dây/vỉ treo Knorr)-POSM Thanh sắt (Bao gồm vỉ treo)",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1256,7 +1256,7 @@ data = {
           "store_types": [
             "FGSUPERL"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1276,43 +1276,43 @@ data = {
                   "sku_code": "CMDWIN0002",
                   "sku_name": "Win HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0009",
                   "sku_name": "Win PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0008",
                   "sku_name": "Win Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0007",
                   "sku_name": "Win Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0001",
                   "sku_name": "Win GE",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0011",
                   "sku_name": "Win Ụ đảo",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1326,7 +1326,7 @@ data = {
           "store_types": [
             "FGSXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1346,37 +1346,37 @@ data = {
                   "sku_code": "CMDWIN0002",
                   "sku_name": "Win HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0009",
                   "sku_name": "Win PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0008",
                   "sku_name": "Win Lipton",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0007",
                   "sku_name": "Win Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0001",
                   "sku_name": "Win GE",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1390,7 +1390,7 @@ data = {
           "store_types": [
             "HBL"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1410,31 +1410,31 @@ data = {
                   "sku_code": "CMDWIN0006",
                   "sku_name": "Win Khung Skin",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0004",
                   "sku_name": "Win Khung Oral",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0003",
                   "sku_name": "Win Khung Men",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0005",
                   "sku_name": "Win Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1448,7 +1448,7 @@ data = {
           "store_types": [
             "HBM"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1468,25 +1468,25 @@ data = {
                   "sku_code": "CMDWIN0005",
                   "sku_name": "Win Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0006",
                   "sku_name": "Win Khung Skin",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0004",
                   "sku_name": "Win Khung Oral",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1500,7 +1500,7 @@ data = {
           "store_types": [
             "HBSXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1520,13 +1520,13 @@ data = {
                   "sku_code": "CMDWIN0005",
                   "sku_name": "Win Khung PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1540,7 +1540,7 @@ data = {
           "store_types": [
             "MP"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1560,19 +1560,19 @@ data = {
                   "sku_code": "CMDWIN0009",
                   "sku_name": "Win PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0002",
                   "sku_name": "Win HC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1586,7 +1586,7 @@ data = {
           "store_types": [
             "MXS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1606,13 +1606,13 @@ data = {
                   "sku_code": "CMDWIN0009",
                   "sku_name": "Win PC",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win Sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1626,7 +1626,7 @@ data = {
           "store_types": [
             "MS"
           ],
-          "value": 'null',
+          "value": null,
           "options": [
             {
               "label": "Thành công",
@@ -1646,13 +1646,13 @@ data = {
                   "sku_code": "CMDWIN0007",
                   "sku_name": "Win Knorr",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 },
                 {
                   "sku_code": "CMDWIN0010",
                   "sku_name": "Win sachet",
                   "facing": 1,
-                  "value": 'null'
+                  "value": null
                 }
               ]
             }
@@ -1663,12 +1663,12 @@ data = {
     "NOTE_UNSUCCESS": {
       "issue_name": "Note Unsuccess",
       "issue_key": "NOTE_UNSUCCESS",
-      "done": 'false',
+      "done": false,
       "store_status": [
         "UNSUCCESS"
       ],
       "validate": {
-        "required": 'true'
+        "required": true
       },
       "items": [
         {
@@ -1677,10 +1677,10 @@ data = {
           "component_code": "note_ktc",
           "label": "Lý do Không thành công",
           "validate": {
-            "required": 'true'
+            "required": true
           },
-          "default_value": 'null',
-          "value": 'null',
+          "default_value": null,
+          "value": null,
           "childs": []
         }
       ]
@@ -1688,17 +1688,17 @@ data = {
     "CHECKOUT": {
       "issue_name": "Check out",
       "issue_key": "CHECKOUT",
-      "done": 'false',
+      "done": false,
       "store_status": [
         "SUCCESS",
         "UNSUCCESS"
       ],
       "validate": {
-        "required": 'true'
+        "required": true
       },
       "value": {
-        "lat": 'null',
-        "lng": 'null'
+        "lat": null,
+        "lng": null
       }
     }
   }

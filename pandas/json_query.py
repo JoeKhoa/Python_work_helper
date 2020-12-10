@@ -67,10 +67,10 @@ json_data = {
 ##############################
 
 pre = os.path.dirname(os.path.realpath(__file__))
-# file_name = 'json_structure.json'
-# file_name = 'pet.json'
-# path = os.path.join(pre, file_name)
-# df = pd.read_json(path)
+file_name = 'json_structure.json'
+file_name = 'pet.json'
+path = os.path.join(pre, file_name)
+df = pd.read_json(path)
 # pprint(vars(df))
 # FIELDS = ["key", "fields.summary", "fields.issuetype.name",\
 #      "fields.status.name", "fields.status.statusCategory.name"]
